@@ -6,7 +6,6 @@ import java.util.Map;
 import gbewd.cpu.Z80;
 import gbewd.cpu.operation.BaseOperation;
 import gbewd.cpu.operation.OperationExecution;
-import gbewd.cpu.operation.sub.SBC_Operation;
 import gbewd.cpu.register.Register;
 import gbewd.mmu.Mmu;
 import gbewd.util.LoadValueFunction;
@@ -44,15 +43,15 @@ public class CP_Operation extends BaseOperation {
 
 	public static Map<Integer, OperationExecution> getAllCP_Operations() {
 		Map<Integer, OperationExecution> operations = new HashMap<>(); 
-		operations.put(0xB8, new SBC_Operation(0xB8, 0, 1, LoadValueFunctions.loadFromB));
-		operations.put(0xB9, new SBC_Operation(0xB9, 0, 1, LoadValueFunctions.loadFromC));
-		operations.put(0xBA, new SBC_Operation(0xBA, 0, 1, LoadValueFunctions.loadFromD));
-		operations.put(0x9B, new SBC_Operation(0x9B, 0, 1, LoadValueFunctions.loadFromE));
-		operations.put(0xBC, new SBC_Operation(0xBC, 0, 1, LoadValueFunctions.loadFromH));
-		operations.put(0xBD, new SBC_Operation(0xBD, 0, 1, LoadValueFunctions.loadFromL));
-		operations.put(0xBF, new SBC_Operation(0xBF, 0, 1, LoadValueFunctions.loadFromA));
-		operations.put(0xBE, new SBC_Operation(0xBE, 0, 2, LoadValueFunctions.loadByteFromMemoryHL));
-		operations.put(0xFE, new SBC_Operation(0xFE, 1, 2, LoadValueFunctions.loadByteFromMemoryPC));
+		operations.put(0xB8, new CP_Operation(0xB8, 0, 1, LoadValueFunctions.loadFromB));
+		operations.put(0xB9, new CP_Operation(0xB9, 0, 1, LoadValueFunctions.loadFromC));
+		operations.put(0xBA, new CP_Operation(0xBA, 0, 1, LoadValueFunctions.loadFromD));
+		operations.put(0xBB, new CP_Operation(0xBB, 0, 1, LoadValueFunctions.loadFromE));
+		operations.put(0xBC, new CP_Operation(0xBC, 0, 1, LoadValueFunctions.loadFromH));
+		operations.put(0xBD, new CP_Operation(0xBD, 0, 1, LoadValueFunctions.loadFromL));
+		operations.put(0xBF, new CP_Operation(0xBF, 0, 1, LoadValueFunctions.loadFromA));
+		operations.put(0xBE, new CP_Operation(0xBE, 0, 2, LoadValueFunctions.loadByteFromMemoryHL));
+		operations.put(0xFE, new CP_Operation(0xFE, 1, 2, LoadValueFunctions.loadByteFromMemoryPC));
 		return operations;
 	}
 }

@@ -34,13 +34,13 @@ public class Swap extends BaseOperation implements OperationExecution {
 	
 	public static Map<Integer, OperationExecution> getAllSWAP_Operations() {
 		Map<Integer, OperationExecution> operations = new HashMap<>();
-		operations.put(0x30, new Swap(0x30, 0, 1, Z80.Registers.B));
-		operations.put(0x31, new Swap(0x31, 0, 1, Z80.Registers.C));
-		operations.put(0x32, new Swap(0x32, 0, 1, Z80.Registers.D));
-		operations.put(0x33, new Swap(0x33, 0, 1, Z80.Registers.E));
-		operations.put(0x34, new Swap(0x34, 0, 1, Z80.Registers.H));
-		operations.put(0x35, new Swap(0x35, 0, 1, Z80.Registers.L));
-		operations.put(0x37, new Swap(0x37, 0, 1, Z80.Registers.A));
+		operations.put(0xCB30, new Swap(0xCB30, 0, 1, Z80.Registers.B));
+		operations.put(0xCB31, new Swap(0xCB31, 0, 1, Z80.Registers.C));
+		operations.put(0xCB32, new Swap(0xCB32, 0, 1, Z80.Registers.D));
+		operations.put(0xCB33, new Swap(0xCB33, 0, 1, Z80.Registers.E));
+		operations.put(0xCB34, new Swap(0xCB34, 0, 1, Z80.Registers.H));
+		operations.put(0xCB35, new Swap(0xCB35, 0, 1, Z80.Registers.L));
+		operations.put(0xCB37, new Swap(0xCB37, 0, 1, Z80.Registers.A));
 		return operations;
 	}
 }

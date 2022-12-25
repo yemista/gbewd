@@ -43,15 +43,15 @@ public class SUB_Operation extends BaseOperation {
 	
 	public static Map<Integer, OperationExecution> getAllSUB_Operations() {
 		Map<Integer, OperationExecution> operations = new HashMap<>(); 
-		operations.put(0x88, new SUB_Operation(0x88, 0, 1, LoadValueFunctions.loadFromB));
-		operations.put(0x89, new SUB_Operation(0x89, 0, 1, LoadValueFunctions.loadFromC));
-		operations.put(0x8A, new SUB_Operation(0x8A, 0, 1, LoadValueFunctions.loadFromD));
-		operations.put(0x8B, new SUB_Operation(0x8B, 0, 1, LoadValueFunctions.loadFromE));
-		operations.put(0x8C, new SUB_Operation(0x8C, 0, 1, LoadValueFunctions.loadFromH));
-		operations.put(0x8D, new SUB_Operation(0x8D, 0, 1, LoadValueFunctions.loadFromL));
-		operations.put(0x8F, new SUB_Operation(0x8F, 0, 1, LoadValueFunctions.loadFromA));
-		operations.put(0x8E, new SUB_Operation(0x8E, 0, 2, LoadValueFunctions.loadByteFromMemoryHL));
-		operations.put(0xCE, new SUB_Operation(0xCE, 1, 2, LoadValueFunctions.loadByteFromMemoryPC));
+		operations.put(0x90, new SUB_Operation(0x90, 0, 1, LoadValueFunctions.loadFromB));
+		operations.put(0x91, new SUB_Operation(0x91, 0, 1, LoadValueFunctions.loadFromC));
+		operations.put(0x92, new SUB_Operation(0x92, 0, 1, LoadValueFunctions.loadFromD));
+		operations.put(0x93, new SUB_Operation(0x93, 0, 1, LoadValueFunctions.loadFromE));
+		operations.put(0x94, new SUB_Operation(0x94, 0, 1, LoadValueFunctions.loadFromH));
+		operations.put(0x95, new SUB_Operation(0x95, 0, 1, LoadValueFunctions.loadFromL));
+		operations.put(0x97, new SUB_Operation(0x97, 0, 1, LoadValueFunctions.loadFromA));
+		operations.put(0x96, new SUB_Operation(0x96, 0, 2, LoadValueFunctions.loadByteFromMemoryHL));
+		operations.put(0xD6, new SUB_Operation(0xD6, 1, 2, LoadValueFunctions.loadByteFromMemoryPC));
 		return operations;
 	}
 }

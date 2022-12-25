@@ -14,10 +14,23 @@ public class GBEWD_Main {
 		List<Integer> keySet = new ArrayList<>(allOps.keySet());
 		Collections.sort(keySet);
 		
+		System.out.println("All instructions:");
 		for (Integer key : keySet) {
 			System.out.println(String.format("%x", key));
 		}
 		
-		System.out.println(keySet.size());
+		System.out.println("Missing instructions:");
+		for (int i = 0; i < 256; ++i) {
+			if (allOps.get(i) == null) {
+				System.out.println(String.format("%x", i));
+			}
+		}
+		for (int i = 0xCB00; i < (0xCB00 + 256); ++i) {
+			if (allOps.get(i) == null) {
+				System.out.println(String.format("%x",i));
+			}
+		}
+		
+		System.out.println("Total operations: " + keySet.size());
 	}
 }

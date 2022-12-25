@@ -14,7 +14,9 @@ public class AllSpecialOperations {
 		operations.put(0x2F, new CPL_Operation(0x2F, 0, 1));
 		operations.put(0x76, new HALT_Operation(0x76, 0, 1));
 		operations.put(0x00, new NOP_Operation(0x00, 0, 1));
-		//operations.put(0x00, new NEG_Operation(0x00, 0, 2));
+		operations.put(0xF3, new DI_Operation(0xF3, 0, 1));
+		operations.put(0xFB, new EI_Operation(0xFB, 0, 1));
+		operations.put(0xCB, new MAPcb_Operation(0xCB, 0, 0));
 		return operations;
 	}
 	

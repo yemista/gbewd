@@ -33,7 +33,7 @@ public class RL_MiscOperations {
 			}
 		});
 		// RLCA: function() { var ci=Z80._r.a&0x80?1:0; var co=Z80._r.a&0x80?0x10:0; Z80._r.a=(Z80._r.a<<1)+ci; Z80._r.a&=255; Z80._r.f=(Z80._r.f&0xEF)+co; Z80._r.m=1; },
-		operations.put(0x1F, new OperationExecution() {
+		operations.put(0x07, new OperationExecution() {
 			@Override
 			public void doOperation(Z80 cpu, Mmu mmu) {
 				Register f = cpu.getRegisters().get(Z80.Registers.F);
@@ -53,7 +53,7 @@ public class RL_MiscOperations {
 			}
 		});
 		// RRA: function() { var ci=Z80._r.f&0x10?0x80:0; var co=Z80._r.a&1?0x10:0; Z80._r.a=(Z80._r.a>>1)+ci; Z80._r.a&=255; Z80._r.f=(Z80._r.f&0xEF)+co; Z80._r.m=1; },
-		operations.put(0x0F, new OperationExecution() {
+		operations.put(0x1F, new OperationExecution() {
 			@Override
 			public void doOperation(Z80 cpu, Mmu mmu) {
 				Register f = cpu.getRegisters().get(Z80.Registers.F);
@@ -73,7 +73,7 @@ public class RL_MiscOperations {
 			}
 		});
 		// RRCA: function() { var ci=Z80._r.a&1?0x80:0; var co=Z80._r.a&1?0x10:0; Z80._r.a=(Z80._r.a>>1)+ci; Z80._r.a&=255; Z80._r.f=(Z80._r.f&0xEF)+co; Z80._r.m=1;
-		operations.put(0x00, new OperationExecution() {
+		operations.put(0x0F, new OperationExecution() {
 			@Override
 			public void doOperation(Z80 cpu, Mmu mmu) {
 				Register f = cpu.getRegisters().get(Z80.Registers.F);
