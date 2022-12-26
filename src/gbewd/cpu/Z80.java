@@ -24,6 +24,8 @@ public class Z80 extends Cpu {
 	
 	
 	public Z80(BreakpointManager breakpointManager) {
+		registers.put(Registers.M, new Register8Bit());
+		registers.put(Registers.T, new Register8Bit());
 		registers.put(Registers.R, new Register8Bit());
 		registers.put(Registers.B, new Register8Bit());
 		registers.put(Registers.C, new Register8Bit());
@@ -138,7 +140,7 @@ public class Z80 extends Cpu {
 	}
 
 	public String getRegisterDump() {
-		String output = String.format("A: %x F: %x B: %x C: %x H: %x L: %x SP: %x PC: 00:%x ",
+		String output = String.format("A: %02x F: %02x B: %02x C: %02x H: %02x L: %02x SP: %04x PC: 00:%04x ",
 				registers.get(Registers.A).getValue(),
 				registers.get(Registers.F).getValue(),
 				registers.get(Registers.B).getValue(),

@@ -37,9 +37,13 @@ import gbewd.cpu.operation.swap.Swap;
 import gbewd.cpu.operation.undefined.UndefinedOperation;
 
 public class AllOperations {
+	private static Map<Integer, OperationExecution> allOperations = new HashMap<>();
 	
 	public static Map<Integer, OperationExecution> getAllOperations() {
-		Map<Integer, OperationExecution> allOperations = new HashMap<>();
+		if (!allOperations.keySet().isEmpty()) {
+			return allOperations;
+		}
+		
 		Map<Integer, Integer> dupes = new HashMap<>();
 		
 		for (Entry<Integer, OperationExecution> entry : ADC_Operation.getAllADCr_xOperations().entrySet()) {
@@ -192,12 +196,12 @@ public class AllOperations {
 			dupes.put(entry.getKey(), dupes.get(entry.getKey()) == null ? 1 : dupes.get(entry.getKey()) + 1);
 		}
 		
-		System.out.println("All dupes:");
-		for (Entry<Integer, Integer> entry : dupes.entrySet()) {
-			if (entry.getValue() > 1) {
-				System.out.println(String.format("%x %d", entry.getKey(), entry.getValue()));
-			}
-		}
+//		System.out.println("All dupes:");
+//		for (Entry<Integer, Integer> entry : dupes.entrySet()) {
+//			if (entry.getValue() > 1) {
+//				System.out.println(String.format("%x %d", entry.getKey(), entry.getValue()));
+//			}
+//		}
 		return allOperations;
 	}
 }

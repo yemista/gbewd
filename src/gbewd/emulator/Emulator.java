@@ -37,6 +37,9 @@ public class Emulator {
 			r.setValue((r.getValue() + 1) & 127);
 			Register pc = cpu.getRegisters().get(Registers.PC);
 			int pcValue = pc.getValue();
+			String cpuDump = cpu.getRegisterDump();
+			String memoryDump = mmu.getMemoryDump(pcValue, 4);
+			System.out.println(String.format("%s%s", cpuDump, memoryDump));			
 			
 			if (breakpointManager.pcBreakpointHit(pcValue)) {
 			
